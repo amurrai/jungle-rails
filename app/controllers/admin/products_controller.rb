@@ -3,7 +3,6 @@ class Admin::ProductsController < ApplicationController
   http_basic_authenticate_with :name => ENV["USERNAME"], :password => ENV["PASSWORD"]
 
   def index
-    puts ENV["USERNAME"]
     @products = Product.order(id: :desc).all
   end
 
